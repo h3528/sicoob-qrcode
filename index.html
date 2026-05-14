@@ -5,25 +5,43 @@
     <title>Baixar Sicoob</title>
 
     <script>
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        function redirecionar() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-        // ANDROID
-        if (/android/i.test(userAgent)) {
-            window.location.href = "https://play.google.com/store/apps/details?id=br.com.sicoob";
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=br.com.sicoob";
+
+            } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                window.location.href = "https://apps.apple.com/br/app/sicoob/id1600400487";
+
+            } else {
+                window.location.href = "https://www.sicoob.com.br";
+            }
         }
 
-        // IOS
-        else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            window.location.href = "https://apps.apple.com/br/app/sicoob/id416696406";
-        }
-
-        // OUTROS (PC)
-        else {
-            window.location.href = "https://www.sicoob.com.br";
-        }
+        // Aguarda 1 segundo antes de redirecionar (IMPORTANTE!)
+        setTimeout(redirecionar, 1000);
     </script>
 </head>
-<body>
-    <p>Redirecionando para a loja...</p>
+
+<body style="text-align:center; font-family: Arial; margin-top:50px;">
+
+    <h2>📱 Baixar aplicativo Sicoob</h2>
+    <p>Você será redirecionado automaticamente...</p>
+
+    <br>
+
+    <button onclick="redirecionar()" style="
+        padding:15px 25px;
+        font-size:18px;
+        background-color:#2e7d32;
+        color:white;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+    ">
+        Abrir loja
+    </button>
+
 </body>
 </html>

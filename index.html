@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Baixar Sicoob</title>
+
     <script>
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
+        // ANDROID
         if (/android/i.test(userAgent)) {
-            // Android → Play Store
             window.location.href = "https://play.google.com/store/apps/details?id=br.com.sicoob";
-        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            // iPhone → App Store
-            window.location.href = "https://apps.apple.com/br/app/sicoob/id416696406";
-        } else {
-            // Desktop
+        }
+
+        // IOS
+        else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            window.location.href = "https://apps.apple.com/br/app/sicoob/id1600400487";
+        }
+
+        // OUTROS (PC)
+        else {
             window.location.href = "https://www.sicoob.com.br";
         }
     </script>
 </head>
 <body>
-    <p>Redirecionando...</p>
+    <p>Redirecionando para a loja...</p>
 </body>
 </html>
